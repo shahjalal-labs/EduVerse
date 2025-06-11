@@ -1,4 +1,5 @@
 import { LocationEditIcon } from "lucide-react";
+import { motion } from "motion/react";
 import { Link } from "react-router";
 import { useNavigate } from "react-router";
 
@@ -16,7 +17,7 @@ const Jobcard = ({ job }) => {
     salaryRange,
   } = job;
   return (
-    <div
+    <motion.div
       className="card bg-base-100 max-w-96 shadow-sm hover-effect cursor-pointer"
       onClick={() => navigate(`/jobs/${_id}`)}
     >
@@ -54,7 +55,7 @@ const Jobcard = ({ job }) => {
           <Link to={`/jobs/${_id}`}>View Details</Link>
         </button>
       </div>
-    </div>
+    </motion.div>
   );
 };
 

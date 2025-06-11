@@ -11,6 +11,7 @@ import MyApplication from "../modules/myApplication/pages/MyApplication";
 import AddJob from "../modules/users/recruiter/pages/AddJob";
 import MyPostedJobs from "../modules/users/recruiter/pages/MyPostedJobs";
 import ApplicantForPostedJobs from "../modules/users/recruiter/pages/ApplicantForPostedJobs";
+import CreateAssignment from "../modules/assignments/pages/CreateAssignment";
 
 const router = createBrowserRouter([
   {
@@ -76,6 +77,16 @@ const router = createBrowserRouter([
       },
 
       // faq pages
+
+      // assignments route
+      {
+        path: "assignments/create",
+        element: (
+          <ProtectedRoute>
+            <CreateAssignment />
+          </ProtectedRoute>
+        ),
+      },
     ],
   },
   {
