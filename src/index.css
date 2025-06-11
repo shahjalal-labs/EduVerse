@@ -1,0 +1,26 @@
+@import url("https://fonts.googleapis.com/css2?family=Courgette&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Kaushan+Script&display=swap");
+
+@import "tailwindcss";
+@plugin "daisyui";
+
+@theme {
+  --font-inter: "Inter", sans-serif;
+  --font-kaushan: "Kaushan Script", cursive;
+  --font-courgette: "Courgette", cursive;
+}
+
+body {
+  font-family: "Inter", sans-serif;
+  margin-top: 35px;
+  color: #6a7282;
+}
+
+.max-container {
+  @apply max-w-7xl mx-auto;
+}
+.banner-container {
+  @apply lg:flex flex-row-reverse items-center   justify-between gap-8 p-4  rounded-md;
+}
+.hover-effect {
+  @apply hover:scale-101 hover:shadow-lg hover:border border-amber-500 transition-all duration-200 ease-in-out;
+}
