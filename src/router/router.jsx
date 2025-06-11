@@ -74,6 +74,8 @@ const router = createBrowserRouter([
           </ProtectedRoute>
         ),
       },
+
+      // faq pages
     ],
   },
   {

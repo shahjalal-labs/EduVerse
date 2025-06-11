@@ -4,27 +4,12 @@ import { topToBottom } from "../../../animation/motion";
 import useAuth from "../../../hooks/useAuth";
 import Signout from "../../Auth/components/Signout";
 import Brand from "../ui/Brand";
+import Avatar from "../ui/Avatar";
+import navbarLinks from "./navbarLinksConstant";
+import DropDown from "../ui/DropDown";
 
 const Navbar = () => {
   const { user } = useAuth();
-
-  const link = (
-    <>
-      <li>
-        <Link to="/">Home</Link>
-      </li>
-
-      <li>
-        <Link to="/myapplications">Assignments</Link>
-      </li>
-      <li>
-        <Link to="/recruiter/addjob">Add Job</Link>
-      </li>
-      <li>
-        <Link to="/recruiter/mypostedjob">My Posted Job</Link>
-      </li>
-    </>
-  );
 
   return (
     <motion.nav
@@ -54,19 +39,26 @@ const Navbar = () => {
             tabIndex={0}
             className="menu menu-sm dropdown-content bg-base-100 rounded-box z-1 mt-3 min-w-[150px] p-2 shadow mt-6 border"
           >
-            {link}
+            {navbarLinks()}
           </ul>
         </div>
         <Brand />
       </div>
       <div className="navbar-center hidden lg:flex">
-        <ul className="menu menu-horizontal px-1">{link}</ul>
+        <ul className="menu menu-horizontal px-1">{navbarLinks()}</ul>
       </div>
       <div className="navbar-end">
         {user ? (
-          <Signout>
-            <button className="btn btn-soft btn-primary">Sign Out</button>
-          </Signout>
+          <>
+            <div className="flex items-center gap-4">
+              <DropDown>
+                <Avatar />
+              </DropDown>
+              <Signout>
+                <button className="btn btn-soft btn-primary">Sign Out</button>
+              </Signout>
+            </div>
+          </>
         ) : (
           <Link to="/auth/signin" className="btn">
             Sign In

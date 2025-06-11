@@ -6,7 +6,7 @@ const BannerImg = () => {
   const isMobile = useMediaQuery({ maxWidth: 600 });
 
   return (
-    <div className="*:w-[300px] mt-[-150px] ">
+    <div className="*:w-[300px] mt-[-150px] flex-1 ">
       <motion.img
         src={banner4}
         animate={{ y: [250, 150, 250] }}

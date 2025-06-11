@@ -1,52 +1,52 @@
 export const sidebarDatas = [
   {
-    title: "🎯 Smart Job Matches",
+    title: "🎯 Smart Assignment Matches",
     description:
-      "Get personalized job recommendations based on your skills, interests, and career goals — no more random listings.",
+      "Find personalized assignments and study tasks that align with your courses and learning goals — no more irrelevant searching.",
   },
   {
-    title: "📊 Track Your Applications",
+    title: "📊 Track Your Progress",
     description:
-      "Stay on top of every opportunity. Monitor your application status from applied to hired, all in one dashboard.",
+      "Stay on top of every assignment. Monitor your submission status from pending to graded, all in one easy dashboard.",
   },
   {
-    title: "⚡ Apply in One Click",
+    title: "⚡ Create & Share Instantly",
     description:
-      "Save time with your stored profile and resume — apply to jobs instantly with just one click.",
+      "Save time by quickly creating new assignments or sharing study resources with your group in just a few clicks.",
   },
   {
-    title: "🌟 Build & Optimize Your Profile",
+    title: "🌟 Build Your Study Profile",
     description:
-      "Create a comprehensive professional profile that highlights your strengths and attracts top employers.",
+      "Create a comprehensive academic profile that highlights your strengths and helps friends find you for group projects.",
   },
   {
-    title: "🔔 Get Job Alerts",
+    title: "🔔 Get Study Alerts",
     description:
-      "Receive instant notifications for new job postings that match your criteria, so you never miss an opportunity.",
+      "Receive instant notifications for new assignments, due date reminders, and feedback on your submissions, so you never miss a beat.",
   },
   {
-    title: "💬 Connect with Employers",
+    title: "💬 Connect with Friends",
     description:
-      "Directly communicate with recruiters and hiring managers through our secure messaging system.",
+      "Directly communicate with your study partners and group members through our secure messaging system.",
   },
   {
-    title: "📚 Access Career Resources",
+    title: "📚 Access Learning Resources",
     description:
-      "Explore articles, guides, and tips to refine your resume, excel in interviews, and advance your career.",
+      "Explore curated articles, guides, and tips to improve your study habits, ace exams, and enhance your understanding.",
   },
   {
-    title: "💼 Discover Company Insights",
+    title: "🤝 Discover Study Groups",
     description:
-      "Research potential employers, read reviews, and get insights into company culture before you apply.",
+      "Find and join active study groups, read reviews, and get insights into their dynamics before you collaborate.",
   },
   {
-    title: "📈 Get Salary Insights",
+    title: "📈 Master Your Subjects",
     description:
-      "Understand salary benchmarks for your target roles and industries, empowering you to negotiate confidently.",
+      "Understand key concepts for your target subjects and assignments, empowering you to excel in your studies confidently.",
   },
   {
-    title: "🎓 Upskill Your Career",
+    title: "🎓 Upskill Your Knowledge",
     description:
-      "Access curated learning paths and resources to develop new skills and stay competitive in the job market.",
+      "Access curated learning paths and resources to develop new skills and stay competitive in your academic journey.",
   },
 ];

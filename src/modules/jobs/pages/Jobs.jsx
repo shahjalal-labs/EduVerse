@@ -1,4 +1,5 @@
 import { use } from "react";
+import { motion } from "motion/react";
 import Jobcard from "../components/Jobcard";
 import TypewriterText from "../../../utils/TypeWriterEffect";
 
