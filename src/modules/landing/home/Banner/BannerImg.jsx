@@ -1,12 +1,12 @@
 import { motion } from "motion/react";
 
 import { useMediaQuery } from "react-responsive";
-import { banner1, banner2, banner4, banner6 } from "../../../../assets/images";
+import { banner4, banner6 } from "../../../../assets/images";
 const BannerImg = () => {
   const isMobile = useMediaQuery({ maxWidth: 600 });
 
   return (
-    <div className="*:w-[300px] mt-[-150px] flex-1">
+    <div className="*:w-[300px] mt-[-150px] ">
       <motion.img
         src={banner4}
         animate={{ y: [250, 150, 250] }}
