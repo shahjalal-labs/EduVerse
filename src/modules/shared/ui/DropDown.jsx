@@ -3,7 +3,7 @@ import { Link } from "react-router";
 
 const links = [
   {
-    path: "assingnments/create",
+    path: "assignments/create",
     name: "Create Assignment",
   },
   {

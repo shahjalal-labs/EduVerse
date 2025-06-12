@@ -17,9 +17,9 @@ const Home = () => {
       <Banner />
       <FAQ />
       <Features />
-      <Suspense fallback={<Spinner />}>
+      {/* <Suspense fallback={<Spinner />}>
         <Jobs jobPromise={jobPromise} />
-      </Suspense>
+      </Suspense> */}
     </div>
   );
 };

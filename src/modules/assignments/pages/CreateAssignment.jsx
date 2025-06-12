@@ -1,10 +1,31 @@
+import { useMutation } from "@tanstack/react-query";
 import { useForm } from "react-hook-form";
 import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
-import Swal from "sweetalert2";
 import { useState } from "react";
+import customAlert from "../../../utils/customAlert";
+import postData from "../../../utils/postData";
 
 const CreateAssignment = () => {
+  const {
+    mutate: createAssignment,
+    isPending,
+    error,
+    isError,
+    isSuccess,
+  } = useMutation({
+    mutationFn: postData,
+    onSuccess: (data) => {
+      console.log(data, "data CreateAssignment.jsx", 19);
+
+      customAlert({
+        title: "Assignment Created!",
+      });
+    },
+    onError: (error) => {
+      console.log(error, "error CreateAssignment.jsx", 19);
+    },
+  });
   const {
     register,
     handleSubmit,
@@ -19,15 +40,13 @@ const CreateAssignment = () => {
       dueDate: startDate,
     };
 
-    Swal.fire({
-      icon: "success",
-      title: "Assignment Created!",
-      text: "Your assignment has been posted successfully.",
-      confirmButtonColor: "#6366f1",
-    });
-
-    reset();
+    console.log(assignment, "CreateAssignment.jsx", 19);
+    // reset();
     setStartDate(new Date());
+    postData({
+      endpoint: "assignments/create-assignment",
+      body: assignment,
+    });
   };
 
   return (
