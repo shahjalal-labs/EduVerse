@@ -7,8 +7,10 @@ import { useState } from "react";
 import customAlert from "../../../utils/customAlert";
 import postData from "../../../utils/postData";
 import { sidebarDatas } from "../../Auth/components/constant";
+import { useNavigate } from "react-router";
 
 const CreateAssignment = () => {
+  const navigate = useNavigate();
   const { user } = useAuth();
   const {
     mutate: createAssignment,
@@ -24,6 +26,9 @@ const CreateAssignment = () => {
       customAlert({
         title: "Assignment Created!",
       });
+      setTimeout(() => {
+        navigate("/assignments");
+      }, 3000);
     },
     onError: (error) => {
       console.log(error, "error CreateAssignment.jsx", 19);
@@ -44,11 +49,10 @@ const CreateAssignment = () => {
       creatorEmail: user?.email,
     };
 
-    console.log(assignment, "CreateAssignment.jsx", 19);
     // reset();
     // setStartDate();
     createAssignment({
-      endpoint: "assignments/create-assignmen",
+      endpoint: "assignments/create-assignment",
       body: assignment,
     });
   };
