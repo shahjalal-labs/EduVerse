@@ -46,7 +46,7 @@ const Jobcard = ({ job }) => {
         <p>{description}</p>
         <div className="card-actions mt-4">
           {requirements.map((req, idx) => (
-            <div key={idx} className="badge badge-outline">
+            <div key={idx} className="badge badge-outline h-fit">
               {req}
             </div>
           ))}

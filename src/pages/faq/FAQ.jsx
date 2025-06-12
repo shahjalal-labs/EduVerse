@@ -12,21 +12,19 @@ const FAQ = () => {
       </h2>
       {/* Added space-y for better visual separation */}
       {eduverseFAQ.map((item, index) => (
-        <>
-          <div
-            key={index}
-            className="hover-effect collapse collapse-plus bg-base-100 border border-base-300"
-          >
-            {/* Using unique name for radio buttons based on index to ensure only one is open at a time */}
-            <input
-              type="radio"
-              name={`my-accordion-${index}`}
-              defaultChecked={index === 0}
-            />
-            <div className="collapse-title font-semibold">{item.question}</div>
-            <div className="collapse-content text-sm">{item.answer}</div>
-          </div>
-        </>
+        <div
+          key={index}
+          className="hover-effect collapse collapse-plus bg-base-100 border border-base-300"
+        >
+          {/* Using unique name for radio buttons based on index to ensure only one is open at a time */}
+          <input
+            type="radio"
+            name={`my-accordion-${index}`}
+            defaultChecked={index === 0}
+          />
+          <div className="collapse-title font-semibold">{item.question}</div>
+          <div className="collapse-content text-sm">{item.answer}</div>
+        </div>
       ))}
     </div>
   );

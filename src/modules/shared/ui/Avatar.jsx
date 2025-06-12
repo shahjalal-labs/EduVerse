@@ -2,7 +2,7 @@ import useAuth from "../../../hooks/useAuth";
 
 const Avatar = () => {
   const { user } = useAuth();
-  console.log(user, "Avatar.jsx", 5);
+  // console.log(user, "Avatar.jsx", 5);
 
   const img =
     user?.photoURL ||

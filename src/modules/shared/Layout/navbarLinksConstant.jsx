@@ -22,7 +22,7 @@ export const navItems = [
 const navbarLinks = () => {
   return navItems.map((item) => {
     return (
-      <li>
+      <li key={item.path}>
         <Link to={item.path}>{item.name}</Link>
       </li>
     );
