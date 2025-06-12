@@ -1,12 +1,15 @@
 import { useMutation } from "@tanstack/react-query";
+import useAuth from "../../../hooks/useAuth";
 import { useForm } from "react-hook-form";
 import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
 import { useState } from "react";
 import customAlert from "../../../utils/customAlert";
 import postData from "../../../utils/postData";
+import { sidebarDatas } from "../../Auth/components/constant";
 
 const CreateAssignment = () => {
+  const { user } = useAuth();
   const {
     mutate: createAssignment,
     isPending,
@@ -38,13 +41,14 @@ const CreateAssignment = () => {
     const assignment = {
       ...data,
       dueDate: startDate,
+      creatorEmail: user?.email,
     };
 
     console.log(assignment, "CreateAssignment.jsx", 19);
     // reset();
-    setStartDate(new Date());
-    postData({
-      endpoint: "assignments/create-assignment",
+    // setStartDate();
+    createAssignment({
+      endpoint: "assignments/create-assignmen",
       body: assignment,
     });
   };
@@ -72,6 +76,7 @@ const CreateAssignment = () => {
           <input
             type="text"
             placeholder="Enter assignment title"
+            defaultValue="Assignment Title"
             className="input input-bordered w-full"
             {...register("title", { required: "Title is required" })}
           />
@@ -86,6 +91,7 @@ const CreateAssignment = () => {
           </label>
           <textarea
             placeholder="Enter assignment description"
+            defaultValue={sidebarDatas[0].description}
             className="textarea textarea-bordered w-full"
             rows={4}
             {...register("description", {
@@ -108,6 +114,7 @@ const CreateAssignment = () => {
               type="number"
               placeholder="Enter total marks"
               className="input input-bordered w-full"
+              defaultValue="10"
               {...register("marks", { required: "Marks are required" })}
             />
             {errors.marks && (
@@ -125,7 +132,10 @@ const CreateAssignment = () => {
               type="url"
               placeholder="https://example.com/image.jpg"
               className="input input-bordered w-full"
-              {...register("thumbnail", {
+              defaultValue={
+                "https://i.ibb.co.com/PZ3DWGJk/developerpuzzles.png"
+              }
+              {...register("thumbnailUrl", {
                 required: "Thumbnail URL is required",
               })}
             />
@@ -145,7 +155,7 @@ const CreateAssignment = () => {
               {...register("difficulty", {
                 required: "Select difficulty level",
               })}
-              defaultValue=""
+              defaultValue="hard"
             >
               <option value="" disabled>
                 Select difficulty
@@ -175,9 +185,16 @@ const CreateAssignment = () => {
           </div>
         </div>
 
-        <button type="submit" className="btn btn-primary w-full mt-6">
-          Create Assignment
+        <button
+          type="submit"
+          className="btn btn-primary w-full mt-6"
+          disabled={isPending}
+        >
+          {isPending ? "Submitting..." : "Create Assignment"}
         </button>
+        {isError && (
+          <p className="text-red-500 text-sm mt-1">{error.message}</p>
+        )}
       </form>
     </div>
   );
