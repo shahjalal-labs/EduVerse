@@ -53,13 +53,21 @@
 │   ├── modules
 │   │   ├── assignments
 │   │   │   ├── components
+│   │   │   │   ├── AssignmentCardBody.jsx
 │   │   │   │   ├── AssignmentCard.jsx
-│   │   │   │   └── AssignmentsPageIntro.jsx
+│   │   │   │   ├── AssignmentsPageIntro.jsx
+│   │   │   │   ├── CreateAssignmentForm.jsx
+│   │   │   │   └── updateAssignments
+│   │   │   │       └── UpdateAssignmentForm.jsx
 │   │   │   └── pages
 │   │   │       ├── Assignments.jsx
-│   │   │       └── CreateAssignment.jsx
+│   │   │       ├── CreateAssignment.jsx
+│   │   │       ├── MyAttemptedAssignments.jsx
+│   │   │       ├── PendingAssignments.jsx
+│   │   │       └── UpdateAssignment.jsx
 │   │   ├── Auth
 │   │   │   ├── AuthLayout.jsx
+│   │   │   ├── AuthRoute.jsx
 │   │   │   ├── components
 │   │   │   │   ├── AuthSidebar.jsx
 │   │   │   │   ├── constant.js
@@ -73,17 +81,6 @@
 │   │   │       ├── ForgotPass.jsx
 │   │   │       ├── Signin.jsx
 │   │   │       └── SignUp.jsx
-│   │   ├── jobs
-│   │   │   ├── AuthRoute.jsx
-│   │   │   ├── components
-│   │   │   │   └── Jobcard.jsx
-│   │   │   ├── index.js
-│   │   │   ├── JobRoute.jsx
-│   │   │   └── pages
-│   │   │       ├── JobApply.jsx
-│   │   │       ├── JobDetails.jsx
-│   │   │       ├── Jobs.jsx
-│   │   │       └── ThankYou.jsx
 │   │   ├── landing
 │   │   │   ├── home
 │   │   │   │   ├── Banner
@@ -92,16 +89,8 @@
 │   │   │   │   │   └── Banner.jsx
 │   │   │   │   └── Home.jsx
 │   │   │   └── index.js
-│   │   ├── myApplication
-│   │   │   ├── component
-│   │   │   │   ├── ApplicationTableHead.jsx
-│   │   │   │   ├── ApplicationTable.jsx
-│   │   │   │   └── ApplicationTableRow.jsx
-│   │   │   └── pages
-│   │   │       └── MyApplication.jsx
 │   │   ├── shared
 │   │   │   ├── Layout
-│   │   │   │   ├── AuthLayout.jsx
 │   │   │   │   ├── CommonFooter.jsx
 │   │   │   │   ├── index.js
 │   │   │   │   ├── NavbarDrawer.jsx
@@ -155,13 +144,13 @@
 │   └── utils
 │       ├── axiosInstance.js
 │       ├── customAlert.js
+│       ├── deleteData.js
 │       ├── ErrorMessage.jsx
 │       ├── fetchData.js
-│       ├── navigate.jsx
 │       ├── PageIntro.jsx
 │       ├── postData.js
 │       └── TypeWriterEffect.jsx
 ├── structure.md
 └── vite.config.js
 
-47 directories, 118 files
+42 directories, 112 files

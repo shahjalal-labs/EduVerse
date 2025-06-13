@@ -13,10 +13,6 @@ export const navItems = [
     name: "Pending Assignments",
     path: "assignments/pending",
   },
-  {
-    name: "My Posted Job",
-    path: "/recruiter/mypostedjob",
-  },
 ];
 
 const navbarLinks = () => {

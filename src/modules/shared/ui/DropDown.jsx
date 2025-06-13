@@ -7,7 +7,7 @@ const links = [
     name: "Create Assignment",
   },
   {
-    path: "/my-attemted-assignments",
+    path: "assignments/my-attempted",
     name: "My Attempted Assignments",
   },
 ];

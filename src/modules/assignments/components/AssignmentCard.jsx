@@ -4,7 +4,10 @@ import useAuth from "../../../hooks/useAuth";
 import { format } from "date-fns";
 import { motion } from "motion/react";
 import { deleteData } from "../../../utils/deleteData";
+import { leftToRight } from "../../../animation/motion";
+import AssignmentCardBody from "./AssignmentCardBody";
 const AssignmentCard = ({ assignment }) => {
+  console.log(assignment, "AssignmentCard.jsx", 10);
   const { user } = useAuth();
   const { mutate: deleteAssignment, isPending } = useMutation({
     mutationFn: ({ endpoint, body }) => deleteData(endpoint, body),
@@ -38,53 +41,24 @@ const AssignmentCard = ({ assignment }) => {
     });
   };
   return (
-    <div>
-      <motion.div
-        key={assignment._id}
-        className="card bg-base-100 shadow-xl border hover:shadow-2xl transition-all duration-300"
-        whileHover={{ scale: 1.03 }}
-        initial={{ opacity: 0, y: 20 }}
-        animate={{ opacity: 1, y: 0 }}
-      >
-        <figure>
-          <img
-            src={assignment.thumbnailUrl}
-            alt="Thumbnail"
-            className="w-full h-52 object-cover"
-          />
-        </figure>
-        <div className="card-body">
-          <h2 className="card-title text-xl font-semibold">
-            {assignment.title}
-          </h2>
-          <p className="text-gray-600 text-sm">
-            {assignment.description.length > 80
-              ? assignment.description.slice(0, 80) + "..."
-              : assignment.description}
-          </p>
-          <div className="mt-2">
-            <div className="badge badge-secondary mr-2">
-              Difficulty: {assignment.difficulty}
-            </div>
-            <div className="badge badge-info">Marks: {assignment.marks}</div>
-          </div>
-          <p className="text-sm text-gray-400 mt-2">
-            Due: {format(new Date(assignment.dueDate), "PPP")}
-          </p>
-          <div className="card-actions max-sm:flex-col justify-center gap-2  mt-8 *:max-sm:btn-block *:btn-outline *:btn-info *:min-w-[98px]">
-            <button
-              onClick={handleDeleteAssignment}
-              className="btn btn-sm btn-primary"
-              disabled={isPending}
-            >
-              {isPending ? "Deleting.." : "Delete"}
-            </button>
-            <button className="btn btn-sm btn-primary">Update</button>
-            <button className="btn btn-sm btn-primary">View Details</button>
-          </div>
-        </div>
-      </motion.div>
-    </div>
+    <motion.div
+      key={assignment._id}
+      className="card bg-base-100 shadow-xl hover-effect hover:scale-76 scale-95"
+      {...leftToRight}
+    >
+      <figure>
+        <img
+          src={assignment?.thumbnailUrl}
+          alt="Thumbnail"
+          className="w-full h-52 object-cover"
+        />
+      </figure>
+      <AssignmentCardBody
+        assignment={assignment}
+        handleDeleteAssignment={handleDeleteAssignment}
+        isPending={isPending}
+      />
+    </motion.div>
   );
 };
 
