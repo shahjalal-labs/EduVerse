@@ -7,11 +7,11 @@ export const navItems = [
   },
   {
     name: "Assignments",
-    path: "/myapplications",
+    path: "assignments",
   },
   {
     name: "Pending Assignments",
-    path: "/recruiter/addjob",
+    path: "assignments/pending",
   },
   {
     name: "My Posted Job",

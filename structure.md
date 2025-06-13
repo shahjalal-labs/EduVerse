@@ -1,16 +1,19 @@
 .
 ├── bun.lock
 ├── dist
-│   ├── 200.html
 │   ├── assets
-│   │   ├── index-BX4pyhSA.css
-│   │   └── index-DgdMc73g.js
+│   │   ├── index-C6fnzORZ.css
+│   │   ├── index-DG3N_GFl.js
+│   │   ├── jobseeker1-CgAo3wI1.jpg
+│   │   └── jobseeker2-mtN3WWmm.jpg
+│   ├── CNAME
 │   └── index.html
 ├── eslint.config.js
 ├── index.html
 ├── package.json
 ├── public
 │   └── CNAME
+├── README.md
 ├── src
 │   ├── animation
 │   │   ├── auth-lottie.json
@@ -20,6 +23,18 @@
 │   ├── App.jsx
 │   ├── assets
 │   │   └── images
+│   │       ├── assignments
+│   │       │   ├── ai.jpg
+│   │       │   ├── backendserver.jpg
+│   │       │   ├── developerpuzzles.jpg
+│   │       │   └── weatherapp.jpg
+│   │       ├── banner1.jpg
+│   │       ├── banner2.jpg
+│   │       ├── banner3.jpg
+│   │       ├── banner4.jpg
+│   │       ├── banner5.jpg
+│   │       ├── banner6.jpg
+│   │       ├── banner7.jpg
 │   │       ├── index.js
 │   │       ├── jobseeker1.jpg
 │   │       └── jobseeker2.jpg
@@ -31,10 +46,18 @@
 │   │   └── firebase.init.js
 │   ├── hooks
 │   │   ├── useAuth.jsx
+│   │   ├── useCustomMediaQurey.jsx
 │   │   └── useHelmet.jsx
 │   ├── index.css
 │   ├── main.jsx
 │   ├── modules
+│   │   ├── assignments
+│   │   │   ├── components
+│   │   │   │   ├── AssignmentCard.jsx
+│   │   │   │   └── AssignmentsPageIntro.jsx
+│   │   │   └── pages
+│   │   │       ├── Assignments.jsx
+│   │   │       └── CreateAssignment.jsx
 │   │   ├── Auth
 │   │   │   ├── AuthLayout.jsx
 │   │   │   ├── components
@@ -83,11 +106,14 @@
 │   │   │   │   ├── index.js
 │   │   │   │   ├── NavbarDrawer.jsx
 │   │   │   │   ├── Navbar.jsx
+│   │   │   │   ├── navbarLinksConstant.jsx
 │   │   │   │   ├── RootLayout.jsx
 │   │   │   │   └── Spinner.jsx
 │   │   │   └── ui
+│   │   │       ├── Avatar.jsx
 │   │   │       ├── Brand.jsx
 │   │   │       ├── Button.jsx
+│   │   │       ├── DropDown.jsx
 │   │   │       ├── index.js
 │   │   │       └── Input.jsx
 │   │   └── users
@@ -102,10 +128,13 @@
 │   │       │   │   ├── AddJobFilter.jsx
 │   │       │   │   ├── AddJobSelect.jsx
 │   │       │   │   ├── Dropdown.jsx
-│   │       │   │   └── SalaryRange.jsx
+│   │       │   │   ├── PostedJobTableRow.jsx
+│   │       │   │   ├── SalaryRange.jsx
+│   │       │   │   └── TextArea.jsx
 │   │       │   ├── index.js
 │   │       │   ├── pages
 │   │       │   │   ├── AddJob.jsx
+│   │       │   │   ├── ApplicantForPostedJobs.jsx
 │   │       │   │   └── MyPostedJobs.jsx
 │   │       │   ├── recruiter.constant.js
 │   │       │   └── RecruiterLayout.jsx
@@ -114,17 +143,25 @@
 │   │           ├── index.js
 │   │           ├── pages
 │   │           └── SeekerLayout.jsx
+│   ├── pages
+│   │   ├── faq
+│   │   │   ├── faq.constant.js
+│   │   │   └── FAQ.jsx
+│   │   └── features
+│   │       └── Features.jsx
 │   ├── router
 │   │   ├── ProtectedRoute.jsx
 │   │   └── router.jsx
 │   └── utils
 │       ├── axiosInstance.js
+│       ├── customAlert.js
 │       ├── ErrorMessage.jsx
 │       ├── fetchData.js
 │       ├── navigate.jsx
 │       ├── PageIntro.jsx
+│       ├── postData.js
 │       └── TypeWriterEffect.jsx
 ├── structure.md
 └── vite.config.js
 
-40 directories, 88 files
+47 directories, 118 files

@@ -1,6 +1,42 @@
+import { useMutation } from "@tanstack/react-query";
+import customAlert from "../../../utils/customAlert";
+import useAuth from "../../../hooks/useAuth";
 import { format } from "date-fns";
 import { motion } from "motion/react";
+import { deleteData } from "../../../utils/deleteData";
 const AssignmentCard = ({ assignment }) => {
+  const { user } = useAuth();
+  const { mutate: deleteAssignment, isPending } = useMutation({
+    mutationFn: ({ endpoint, body }) => deleteData(endpoint, body),
+    mutationKey: ["deleteAssignment", "deleteSingleassignment"],
+    onSuccess: (data) => {
+      console.log("success", data);
+      customAlert({
+        text: "Assignment deleted successfully",
+        timer: 2000,
+        showConfirmButton: true,
+      });
+    },
+    onError: (err) => {
+      const { response } = err;
+      const errMessage = response?.data?.message;
+
+      customAlert({
+        title: "Error Occured",
+        text: errMessage,
+        icon: "error",
+        timer: 2000,
+      });
+    },
+  });
+
+  const handleDeleteAssignment = async () => {
+    alert("Are you sure to delete this assignment?");
+    await deleteAssignment({
+      endpoint: `assignments/delete-assignment/${assignment._id}`,
+      body: { email: user?.email },
+    });
+  };
   return (
     <div>
       <motion.div
@@ -36,7 +72,13 @@ const AssignmentCard = ({ assignment }) => {
             Due: {format(new Date(assignment.dueDate), "PPP")}
           </p>
           <div className="card-actions max-sm:flex-col justify-center gap-2  mt-8 *:max-sm:btn-block *:btn-outline *:btn-info *:min-w-[98px]">
-            <button className="btn btn-sm btn-primary">Delete</button>
+            <button
+              onClick={handleDeleteAssignment}
+              className="btn btn-sm btn-primary"
+              disabled={isPending}
+            >
+              {isPending ? "Deleting.." : "Delete"}
+            </button>
             <button className="btn btn-sm btn-primary">Update</button>
             <button className="btn btn-sm btn-primary">View Details</button>
           </div>
