@@ -1,3 +1,5 @@
+import { Link } from "react-router";
+
 const EvaluateSubmissionText = ({ submissionData }) => {
   const { studentEmail, googleDocLink, notes } = submissionData;
   return (
@@ -9,14 +11,9 @@ const EvaluateSubmissionText = ({ submissionData }) => {
         </p>
         <p>
           <span className="font-semibold">📄 Google Doc Link:</span>{" "}
-          <a
-            href={googleDocLink}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="link link-primary break-all"
-          >
+          <Link to={googleDocLink} target="_blank" rel="noopener noreferrer">
             Open Document
-          </a>
+          </Link>
         </p>
         <p>
           <span className="font-semibold">📝 Total Marks:</span>{" "}
@@ -32,4 +29,3 @@ const EvaluateSubmissionText = ({ submissionData }) => {
 };
 
 export default EvaluateSubmissionText;
-

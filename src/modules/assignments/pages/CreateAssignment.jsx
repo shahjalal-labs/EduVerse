@@ -45,7 +45,7 @@ const CreateAssignment = () => {
     };
 
     // reset();
-    // setStartDate();
+    setStartDate();
     createAssignment({
       endpoint: "assignments/create-assignment",
       body: assignment,
@@ -58,10 +58,10 @@ const CreateAssignment = () => {
       {...bottomToTop}
     >
       <div className="text-center mb-12">
-        <h1 className="text-4xl md:text-5xl font-bold text-primary mb-4 animate-fade-in">
+        <h1 className="text-3xl md:text-4xl font-bold text-primary mb-4 animate-fade-in">
           Create a New Assignment ✍️
         </h1>
-        <p className="text-lg text-gray-500 animate-fade-in delay-100">
+        <p className="text-md text-gray-500 animate-fade-in delay-100">
           Fill out the form below to share a new learning challenge with your
           peers.
         </p>

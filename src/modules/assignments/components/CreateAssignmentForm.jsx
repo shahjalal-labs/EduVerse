@@ -1,5 +1,4 @@
 import DatePicker from "react-datepicker";
-import { sidebarDatas } from "../../Auth/components/constant";
 
 const CreateAssignmentForm = (props) => {
   const {
@@ -32,7 +31,6 @@ const CreateAssignmentForm = (props) => {
         <input
           type="text"
           placeholder="Enter assignment title"
-          defaultValue="Assignment Title"
           className="input input-bordered w-full"
           {...register("title", { required: "Title is required" })}
         />
@@ -47,7 +45,6 @@ const CreateAssignmentForm = (props) => {
         </label>
         <textarea
           placeholder="Enter assignment description"
-          defaultValue={sidebarDatas[0].description}
           className="textarea textarea-bordered w-full"
           rows={4}
           {...register("description", {
@@ -70,7 +67,6 @@ const CreateAssignmentForm = (props) => {
             type="number"
             placeholder="Enter total marks"
             className="input input-bordered w-full"
-            defaultValue="10"
             {...register("marks", { required: "Marks are required" })}
           />
           {errors.marks && (
@@ -86,7 +82,6 @@ const CreateAssignmentForm = (props) => {
             type="url"
             placeholder="https://example.com/image.jpg"
             className="input input-bordered w-full"
-            defaultValue={"https://i.ibb.co.com/PZ3DWGJk/developerpuzzles.png"}
             {...register("thumbnailUrl", {
               required: "Thumbnail URL is required",
             })}
@@ -107,7 +102,6 @@ const CreateAssignmentForm = (props) => {
             {...register("difficulty", {
               required: "Select difficulty level",
             })}
-            defaultValue="hard"
           >
             <option value="" disabled>
               Select difficulty

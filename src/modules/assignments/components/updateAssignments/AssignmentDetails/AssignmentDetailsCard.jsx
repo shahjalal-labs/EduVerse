@@ -18,13 +18,13 @@ const AssignmentDetailsCard = ({ assignmentDetails }) => {
         <img
           src={assignmentDetails?.thumbnailUrl}
           alt={assignmentDetails?.title}
-          className="w-full h-[600px] object-cover max-sm:h-64 transform hover:scale-105 transition-transform duration-500"
+          className="w-full h-[400px] object-cover max-sm:h-64 transform hover:scale-105 transition-transform duration-500"
           loading="lazy"
         />
       </div>
 
       {/* Title */}
-      <h1 className="text-4xl max-sm:text-3xl font-extrabold mb-4 tracking-tight text-gray-900 drop-shadow-sm">
+      <h1 className="text-3xl max-sm:text-3xl font-semibold mb-4 tracking-tight text-gray-500 drop-shadow-sm">
         {assignmentDetails?.title}
       </h1>
 

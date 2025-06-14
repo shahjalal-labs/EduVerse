@@ -17,9 +17,9 @@ const PendingAssignmentsPage = () => {
 
   return (
     <div className="max-w-6xl mx-auto px-4 py-10">
-      <h1 className="text-3xl font-bold mb-6 text-center flex items-center gap-2 justify-center">
-        <FaClipboardCheck className="text-blue-600" />
-        Pending Assignment Submissions
+      <h1 className="text-3xl font-bold mb-6 text-center flex items-center gap-2 justify-center capitalize">
+        <FaClipboardCheck className="text-blue-600 " />
+        Awaiting Review & Grading
       </h1>
 
       {pendingSubmissions.length === 0 ? (

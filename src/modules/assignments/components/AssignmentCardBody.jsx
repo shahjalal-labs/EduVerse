@@ -16,7 +16,7 @@ const AssignmentCardBody = ({
       </p>
       <div className="mt-2">
         <div className="badge badge-secondary mr-2">
-          Difficulty: {assignment.difficulty}
+          Difficulty: {assignment?.difficulty?.toUpperCase()}
         </div>
         <div className="badge badge-info">Marks: {assignment.marks}</div>
       </div>
@@ -37,7 +37,10 @@ const AssignmentCardBody = ({
         >
           Update
         </Link>
-        <Link to={`/assignment/details/${assignment._id}`} className="btn btn-sm btn-primary">
+        <Link
+          to={`/assignment/details/${assignment._id}`}
+          className="btn btn-sm btn-primary"
+        >
           Details
         </Link>
       </div>

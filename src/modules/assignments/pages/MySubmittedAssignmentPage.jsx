@@ -6,7 +6,7 @@ import {
   FaHourglassHalf,
   FaCalendarAlt,
   FaCommentDots,
-  FaTrophy,
+  FaChalkboardTeacher,
 } from "react-icons/fa";
 import { fetchData } from "../../../utils/fetchData";
 import useAuth from "../../../hooks/useAuth";
@@ -60,7 +60,7 @@ const MySubmittedAssignmentPage = () => {
                 initial={{ opacity: 0, y: 30 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: idx * 0.1 }}
-                className="bg-white shadow-xl hover:shadow-2xl rounded-2xl p-6 transition-all duration-300 border"
+                className="bg-white shadow-xl hover:shadow-2xl rounded-2xl p-6 transition-all duration-300 hover-effect"
               >
                 <div className="flex items-center gap-3 mb-2">
                   <FaBook className="text-blue-500 text-xl" />
@@ -120,7 +120,7 @@ const MySubmittedAssignmentPage = () => {
                 )}
                 {examiner && (
                   <p className="mt-2 flex items-center text-sm text-gray-700">
-                    <FaCommentDots className="mr-2 text-indigo-500" />
+                    <FaChalkboardTeacher className="mr-2 text-indigo-500" />
                     <span className="italic">Examinner: {examiner}</span>
                   </p>
                 )}
