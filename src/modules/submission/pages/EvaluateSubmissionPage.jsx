@@ -4,13 +4,16 @@ import EvaluateSumissionForm from "../components/evaluateSubmission/EvaluateSumi
 import useAuth from "../../../hooks/useAuth";
 import updateData from "../../../utils/updateData";
 import { useLoaderData, useParams } from "react-router";
+import EvaluateSubmissionText from "../components/evaluateSubmission/EvaluateSubmissionText";
+import customAlert from "../../../utils/customAlert";
+import ErrorMessage from "../../../utils/ErrorMessage";
+import { useState } from "react";
 
-const EvaluateSubmissionPage = ({ submissionData }) => {
-  const data = useLoaderData();
-  console.log(data, "EvaluateSubmissionPage.jsx", 10);
+const EvaluateSubmissionPage = () => {
+  const [error, setError] = useState("");
+  const submissionData = useLoaderData();
 
   const { user } = useAuth();
-  const { _id, studentEmail, googleDocLink, notes } = submissionData || {};
 
   const { id } = useParams();
   const {
@@ -26,27 +29,27 @@ const EvaluateSubmissionPage = ({ submissionData }) => {
     };
     console.log(`evaluatedData`, evaluatedData);
     try {
-      const result = updateData({
-        endpoint: `submission/evaluate/${id}`,
+      setError("");
+      const result = await updateData({
+        endpoint: `submission/evaluat/${id}`,
         body: evaluatedData,
       });
+      console.log(`result`, result);
 
       if (result?.success) {
-        Swal.fire(
-          "✅ Success",
-          "Evaluation submitted successfully!",
-          "success",
-        );
-      } else {
-        Swal.fire(
-          "❌ Failed",
-          result.message || "Something went wrong",
-          "error",
-        );
+        customAlert({
+          title: "✅ Success",
+          text: "Evaluation submitted successfully!",
+        });
       }
     } catch (err) {
-      console.log(err, "EvaluateSubmissionPage.jsx", 45);
-      Swal.fire("⚠️ Error", err.message, "error");
+      console.error(err, "EvaluateSubmissionPage.jsx", 45);
+      setError(err?.response?.data?.message);
+      customAlert({
+        title: "⚠️ Opps! Error occured!",
+        text: err?.response?.data?.message,
+        timer: 3000,
+      });
     }
   };
 
@@ -55,33 +58,7 @@ const EvaluateSubmissionPage = ({ submissionData }) => {
       <h2 className="text-2xl font-bold text-center text-primary">
         Evaluate Submission
       </h2>
-      <div className="space-y-2 text-sm">
-        <p>
-          <span className="font-semibold">📧 Submitted By:</span>{" "}
-          <span className="text-gray-700 dark:text-gray-300">
-            {studentEmail}
-          </span>
-        </p>
-        <p>
-          <span className="font-semibold">📄 Google Doc Link:</span>{" "}
-          <a
-            href={googleDocLink}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="link link-primary break-all"
-          >
-            Open Document
-          </a>
-        </p>
-        <p>
-          <span className="font-semibold">📝 Total Marks:</span>{" "}
-          <span className="text-gray-500 ">30</span>
-        </p>
-        <p>
-          <span className="font-semibold">📝 Notes:</span>{" "}
-          <span className="text-gray-700 ">{notes}</span>
-        </p>
-      </div>
+      <EvaluateSubmissionText submissionData={submissionData} />
       {/* form */}
       {/* handleSubmit, register, errors, onSubmit */}
       <EvaluateSumissionForm
