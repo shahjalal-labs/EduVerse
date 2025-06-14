@@ -26,10 +26,10 @@ const EvaluateSubmissionPage = () => {
   const onSubmit = async (data) => {
     const evaluatedData = {
       ...data,
-      // evaluatedBy: user?.email,
-      evaluatedBy: "fortesting@gmail.com",
+      evaluatedBy: user?.email,
+      // evaluatedBy: "fortesting@gmail.com",
     };
-    console.log(`evaluatedData`, evaluatedData);
+    // console.log(`evaluatedData`, evaluatedData);
     try {
       setError("");
       const result = await updateData({
