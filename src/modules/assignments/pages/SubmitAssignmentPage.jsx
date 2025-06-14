@@ -9,6 +9,7 @@ const SubmitAssignmentPage = () => {
   const navigate = useNavigate();
   const { user } = useAuth();
   const { id } = useParams(); // assignmentId from route
+  console.log(id, "SubmitAssignmentPage.jsx", 12);
   const { register, handleSubmit, reset } = useForm();
 
   const onSubmit = async (data) => {

@@ -39,7 +39,7 @@ const MySubmittedAssignmentPage = () => {
             You haven’t submitted any assignments yet.
           </p>
         ) : (
-          submitted.map((item, idx) => {
+          submitted?.map((item, idx) => {
             const {
               _id,
               assignmentId: { title },
@@ -49,9 +49,9 @@ const MySubmittedAssignmentPage = () => {
               obtainedMarks,
               feedback,
               createdAt,
-              assignmentId,
               studentEmail: examinee,
               evaluatedBy: examiner,
+              assignmentId,
             } = item;
 
             return (

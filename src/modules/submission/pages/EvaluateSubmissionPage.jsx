@@ -3,13 +3,14 @@ import Swal from "sweetalert2";
 import EvaluateSumissionForm from "../components/evaluateSubmission/EvaluateSumissionForm";
 import useAuth from "../../../hooks/useAuth";
 import updateData from "../../../utils/updateData";
-import { useLoaderData, useParams } from "react-router";
+import { useLoaderData, useNavigate, useParams } from "react-router";
 import EvaluateSubmissionText from "../components/evaluateSubmission/EvaluateSubmissionText";
 import customAlert from "../../../utils/customAlert";
 import ErrorMessage from "../../../utils/ErrorMessage";
 import { useState } from "react";
 
 const EvaluateSubmissionPage = () => {
+  const navigate = useNavigate();
   const [error, setError] = useState("");
   const submissionData = useLoaderData();
 
@@ -25,13 +26,14 @@ const EvaluateSubmissionPage = () => {
   const onSubmit = async (data) => {
     const evaluatedData = {
       ...data,
-      evaluatedBy: user?.email,
+      // evaluatedBy: user?.email,
+      evaluatedBy: "fortesting@gmail.com",
     };
     console.log(`evaluatedData`, evaluatedData);
     try {
       setError("");
       const result = await updateData({
-        endpoint: `submission/evaluat/${id}`,
+        endpoint: `submission/evaluate/${id}`,
         body: evaluatedData,
       });
       console.log(`result`, result);
@@ -41,6 +43,10 @@ const EvaluateSubmissionPage = () => {
           title: "✅ Success",
           text: "Evaluation submitted successfully!",
         });
+        // assignment/submit/
+        setTimeout(() => {
+          navigate(`/assignment/my-submit`);
+        }, 2000);
       }
     } catch (err) {
       console.error(err, "EvaluateSubmissionPage.jsx", 45);
