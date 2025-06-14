@@ -1,4 +1,5 @@
 import { motion } from "motion/react";
+import { Link } from "react-router";
 const difficultyColors = {
   easy: "bg-green-100 text-green-800",
   medium: "bg-yellow-100 text-yellow-800",
@@ -66,6 +67,14 @@ const AssignmentDetailsCard = ({ assignmentDetails }) => {
           Creator:{" "}
           <span className="ml-2">{assignmentDetails?.creatorEmail}</span>
         </div>
+      </div>
+      <div className="flex-center mt-7 mb-4">
+        <Link
+          to={`/assignment/submit/${assignmentDetails?._id}`}
+          className="btn bnt-active btn-wide btn-info"
+        >
+          Take Assignment
+        </Link>
       </div>
     </motion.div>
   );

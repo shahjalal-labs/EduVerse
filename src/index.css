@@ -25,3 +25,8 @@ body {
 .hover-effect {
   @apply hover:scale-101 hover:shadow-lg hover:border hover:border-amber-500 transition-all duration-200 ease-in-out;
 }
+
+
+.flex-center{
+  @apply flex items-center justify-center;
+}
