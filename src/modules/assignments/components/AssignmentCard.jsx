@@ -43,7 +43,7 @@ const AssignmentCard = ({ assignment }) => {
   return (
     <motion.div
       key={assignment._id}
-      className="card bg-base-100 shadow-xl hover-effect hover:scale-76 scale-95"
+      className="card bg-base-100 shadow-xl hover-effect hover:scale-97 scale-95"
       {...leftToRight}
     >
       <figure>

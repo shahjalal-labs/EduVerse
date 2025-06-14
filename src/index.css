@@ -23,10 +23,9 @@ body {
   @apply lg:flex flex-row-reverse items-center   justify-center mx-auto gap-8  p-4   rounded-md;
 }
 .hover-effect {
-  @apply hover:scale-101 hover:shadow-lg hover:border hover:border-amber-500 transition-all duration-200 ease-in-out;
+  @apply hover:shadow-lg hover:border hover:border-amber-500 transition-all duration-200 ease-in-out;
 }
 
-
-.flex-center{
+.flex-center {
   @apply flex items-center justify-center;
 }
