@@ -3,7 +3,6 @@ import { fetchData } from "../../../utils/fetchData";
 import { useParams } from "react-router";
 import { useEffect, useState } from "react";
 import AssignmentDetailsCard from "../components/updateAssignments/AssignmentDetails/AssignmentDetailsCard";
-
 const AssignmentDetailsPage = () => {
   const [assignmentDetails, setAssignmentDetails] = useState({});
   const { id } = useParams();
@@ -13,6 +12,7 @@ const AssignmentDetailsPage = () => {
     queryFn: () => fetchData(`assignments/${id}`),
   });
 
+  console.log(error, "AssignmentDetailsPage.jsx", 12);
   useEffect(() => {
     if (data?.data) {
       setAssignmentDetails(data.data);
