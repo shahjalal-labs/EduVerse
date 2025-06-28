@@ -1,25 +1,14 @@
 .
 ├── bun.lock
 ├── dist
-│   ├── 200.html
 │   ├── assets
-│   │   ├── banner1-gaH06MF0.jpg
-│   │   ├── banner2-CWYMHgBG.jpg
-│   │   ├── banner3-CZ7XeKvy.jpg
-│   │   ├── banner4-BlXO_cFF.jpg
-│   │   ├── banner5-Bt3rVsGE.jpg
-│   │   ├── banner6-Dof1e_yB.jpg
-│   │   ├── banner7-CYoVP1-E.jpg
-│   │   ├── index-C0zpGZJv.css
-│   │   ├── index-C2bha4Z_.js
+│   │   ├── index-C6fnzORZ.css
+│   │   ├── index-DG3N_GFl.js
 │   │   ├── jobseeker1-CgAo3wI1.jpg
-│   │   ├── jobseeker2-mtN3WWmm.jpg
-│   │   └── notfound3-BzQkv1ea.jpg
+│   │   └── jobseeker2-mtN3WWmm.jpg
 │   ├── CNAME
 │   └── index.html
-├── .env
 ├── eslint.config.js
-├── .gitignore
 ├── index.html
 ├── package.json
 ├── public
@@ -36,7 +25,6 @@
 │   │   └── images
 │   │       ├── assignments
 │   │       │   ├── ai.jpg
-│   │       │   ├── a-young-programmer-solving-javascript-coding-puzzles-.jpg
 │   │       │   ├── backendserver.jpg
 │   │       │   ├── developerpuzzles.jpg
 │   │       │   └── weatherapp.jpg
@@ -49,8 +37,7 @@
 │   │       ├── banner7.jpg
 │   │       ├── index.js
 │   │       ├── jobseeker1.jpg
-│   │       ├── jobseeker2.jpg
-│   │       └── notfound3.jpg
+│   │       └── jobseeker2.jpg
 │   ├── contexts
 │   │   └── AuthContext
 │   │       ├── AuthContext.jsx
@@ -65,24 +52,18 @@
 │   ├── main.jsx
 │   ├── modules
 │   │   ├── assignments
-│   │   │   ├── assignmentRoutes.jsx
 │   │   │   ├── components
 │   │   │   │   ├── AssignmentCardBody.jsx
 │   │   │   │   ├── AssignmentCard.jsx
 │   │   │   │   ├── AssignmentsPageIntro.jsx
 │   │   │   │   ├── CreateAssignmentForm.jsx
-│   │   │   │   ├── SubmitAssignment
 │   │   │   │   └── updateAssignments
-│   │   │   │       ├── AssignmentDetails
-│   │   │   │       │   └── AssignmentDetailsCard.jsx
 │   │   │   │       └── UpdateAssignmentForm.jsx
 │   │   │   └── pages
-│   │   │       ├── AssignmentDetailsPage.jsx
 │   │   │       ├── Assignments.jsx
 │   │   │       ├── CreateAssignment.jsx
-│   │   │       ├── MySubmittedAssignmentPage.jsx
-│   │   │       ├── PendingAssignmentsPage.jsx
-│   │   │       ├── SubmitAssignmentPage.jsx
+│   │   │       ├── MyAttemptedAssignments.jsx
+│   │   │       ├── PendingAssignments.jsx
 │   │   │       └── UpdateAssignment.jsx
 │   │   ├── Auth
 │   │   │   ├── AuthLayout.jsx
@@ -124,13 +105,6 @@
 │   │   │       ├── DropDown.jsx
 │   │   │       ├── index.js
 │   │   │       └── Input.jsx
-│   │   ├── submission
-│   │   │   ├── components
-│   │   │   │   └── evaluateSubmission
-│   │   │   │       ├── EvaluateSubmissionText.jsx
-│   │   │   │       └── EvaluateSumissionForm.jsx
-│   │   │   └── pages
-│   │   │       └── EvaluateSubmissionPage.jsx
 │   │   └── users
 │   │       ├── admin
 │   │       │   ├── AdminLayout.jsx
@@ -165,7 +139,6 @@
 │   │   └── features
 │   │       └── Features.jsx
 │   ├── router
-│   │   ├── ErrorPage.jsx
 │   │   ├── ProtectedRoute.jsx
 │   │   └── router.jsx
 │   └── utils
@@ -176,12 +149,8 @@
 │       ├── fetchData.js
 │       ├── PageIntro.jsx
 │       ├── postData.js
-│       ├── TypeWriterEffect.jsx
-│       └── updateData.js
-├── structure2.md
+│       └── TypeWriterEffect.jsx
 ├── structure.md
-├── .vite
-│   └── deps
-│       ├── _metadata.json
-│       └── package.json
 └── vite.config.js
+
+42 directories, 112 files
