@@ -163,8 +163,9 @@
 │       ├── TypeWriterEffect.jsx
 │       └── updateData.js
 ├── structure2.md
+├── structure.md
 └── vite.config.js
 
-46 directories, 117 files
+46 directories, 118 files
 
 ```
