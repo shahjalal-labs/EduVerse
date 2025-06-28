@@ -1,25 +1,9 @@
+# 📁 Project Structure
+
+```bash
 .
 ├── bun.lock
-├── dist
-│   ├── 200.html
-│   ├── assets
-│   │   ├── banner1-gaH06MF0.jpg
-│   │   ├── banner2-CWYMHgBG.jpg
-│   │   ├── banner3-CZ7XeKvy.jpg
-│   │   ├── banner4-BlXO_cFF.jpg
-│   │   ├── banner5-Bt3rVsGE.jpg
-│   │   ├── banner6-Dof1e_yB.jpg
-│   │   ├── banner7-CYoVP1-E.jpg
-│   │   ├── index-C0zpGZJv.css
-│   │   ├── index-C2bha4Z_.js
-│   │   ├── jobseeker1-CgAo3wI1.jpg
-│   │   ├── jobseeker2-mtN3WWmm.jpg
-│   │   └── notfound3-BzQkv1ea.jpg
-│   ├── CNAME
-│   └── index.html
-├── .env
 ├── eslint.config.js
-├── .gitignore
 ├── index.html
 ├── package.json
 ├── public
@@ -179,9 +163,8 @@
 │       ├── TypeWriterEffect.jsx
 │       └── updateData.js
 ├── structure2.md
-├── structure.md
-├── .vite
-│   └── deps
-│       ├── _metadata.json
-│       └── package.json
 └── vite.config.js
+
+46 directories, 117 files
+
+```
